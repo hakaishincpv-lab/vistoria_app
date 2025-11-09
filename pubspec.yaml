@@ -1,0 +1,40 @@
+name: vistoria_app
+description: "Aplicativo de Vistorias de Boas Práticas"
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Ícones padrão iOS
+  cupertino_icons: ^1.0.8
+
+  # 📸 Para tirar foto da não conformidade
+  image_picker: ^1.1.2
+
+  # ✍️ Para assinatura digital
+  signature: ^5.5.0
+
+  # 🧾 Para gerar PDF
+  pdf: ^3.11.0
+  printing: ^5.13.5
+
+  # 💾 Para salvar arquivos localmente (PDF, imagens)
+  path_provider: ^2.1.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/logo.png
