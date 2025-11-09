@@ -1,19 +1,27 @@
 workflows:
   ios-build:
-    name: iOS Build
+    name: Skinnyman Softwares - Vistoria App (iOS)
     max_build_duration: 60
     environment:
       flutter: stable
       xcode: latest
       cocoapods: default
     scripts:
-      - name: Get Flutter dependencies
+      - name: 🔧 Preparar dependências Flutter
         script: flutter pub get
-      - name: Build iOS .ipa
+
+      - name: ⚙️ Definir nome e identificador do app
+        script: |
+          flutter pub run rename --appname "Skinnyman Softwares - Vistoria App"
+          flutter pub run rename --bundleId com.skinnyman.vistoria
+
+      - name: 📦 Compilar build iOS (.ipa)
         script: |
           flutter build ipa --release --no-codesign
+
     artifacts:
       - build/ios/ipa/*.ipa
+
     publishing:
       email:
         recipients:
