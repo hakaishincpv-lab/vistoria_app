@@ -6,14 +6,10 @@ workflows:
       flutter: stable
       xcode: latest
       cocoapods: default
+
     scripts:
       - name: 🔧 Preparar dependências Flutter
         script: flutter pub get
-
-      - name: ⚙️ Definir nome e identificador do app
-        script: |
-          flutter pub run rename --appname "Skinnyman Softwares - Vistoria App"
-          flutter pub run rename --bundleId com.skinnyman.vistoria
 
       - name: 📦 Compilar build iOS (.ipa)
         script: |
@@ -26,3 +22,4 @@ workflows:
       email:
         recipients:
           - hakaishin.cpv@gmail.com
+
